@@ -85,8 +85,8 @@ Also, you can rename `docker-compose.sample.yaml` to `docker-compose.yaml` and g
 
 ## Contributing 👥
 
-We welcome contributions to this repository! If you’re interested in contributing, please take a look at our [CONTIRIBUTION.md](https://github.com/data-burst/airflow-git-sync/CONTRIBUTING.md) file for more information on how to get started. We look forward to collaborating with you!
+We welcome contributions to this repository! If you’re interested in contributing, please take a look at our [CONTIRIBUTION.md](CONTRIBUTING.md) file for more information on how to get started. We look forward to collaborating with you!
 
 ## License 📄
 
-This repository is licensed under the MIT License, which is a permissive open-source license that allows for reuse and modification of the code with few restrictions. You can find the full text of the license in [this](https://github.com/data-burst/airflow-git-sync/license) file.
+This repository is licensed under the MIT License, which is a permissive open-source license that allows for reuse and modification of the code with few restrictions. You can find the full text of the license in [this](LICENSE) file.
