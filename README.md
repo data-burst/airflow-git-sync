@@ -78,11 +78,6 @@ Using Airflow Git Sync is simple:
 3. Manage your DAG files in Git as usual. Changes will be automatically synced to Airflow containers.
 4. Trigger automated deployments by pushing DAG changes to your Git repo.
 
-You can find the `docker-compose.sample.yaml` file to learn how to set your own variables in docker-compose.yaml file.
-With just a few lines of configuration, you can revolutionize your Airflow DAG management. No adjustments needed to Airflow itself.
-
-Also, you can rename `docker-compose.sample.yaml` to `docker-compose.yaml` and get our image `databurst/airflow-git-sync:latest` with the default values.
-
 ## Contributing 👥
 
 We welcome contributions to this repository! If you’re interested in contributing, please take a look at our [CONTIRIBUTION.md](CONTRIBUTING.md) file for more information on how to get started. We look forward to collaborating with you!
