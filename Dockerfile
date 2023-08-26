@@ -1,6 +1,6 @@
 FROM alpine:3.18.0
 
-LABEL maintainer=mostafa.ghadimi@yahoo.com
+LABEL maintainer=databurstacademy@gmail.com
 
 LABEL image_name="Airflow DAGs with Git synchronization"
 
