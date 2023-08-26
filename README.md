@@ -16,10 +16,10 @@
 </a>
 </p>
 
-## Table of Contents🏗️
+## Table of Contents 🏗️
 
 - [Airflow Git Sync](#airflow-git-sync)
-  - [Table of Contents🏗️](#table-of-contents️)
+  - [Table of Contents 🏗️](#table-of-contents-️)
   - [Project Description 🌱](#project-description-)
   - [Project Usage 🧑‍💻](#project-usage-)
   - [Contributing 👥](#contributing-)
