@@ -296,8 +296,7 @@ services:
         condition: service_completed_successfully
 
   git-sync:
-    build:
-      context: .
+    image: databurst/git-sync:latest
     volumes:
       - ./project_data:${DESTINATION_PATH:-/app/sync}
       - ${GIT_SSH_KEY:-~/.ssh/id_ed25519}:/root/.ssh/id_ed25519
