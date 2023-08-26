@@ -30,7 +30,7 @@
 Airflow Git Sync provides automated DAG deployments from Git for Airflow environments. It syncs your pipeline code from a Git repository into the Airflow DAG folder.
 
 Keeping DAGs directly in Airflow servers makes management challenging. Code changes require manual syncing to containers. There is no version control or history.
-If you have ever worked with Airflow on Kubernetes, it gives you the ability to sync the DAGs with your repository (as an GitOps solution) using `git-sync` contanier. If you don't have Kubernetes, it is hard to keep the DAGs directory of Airflow (which is placed at `/opt/airflow/dags/`) synced with the changes you applied to your DAGs and in some cases it is required to restart the Airflow service or container.
+If you have ever worked with Airflow on Kubernetes, it gives you the ability to sync the DAGs with your repository (as an GitOps solution) using [git-sync sidecar contanier](https://github.com/kubernetes/git-sync). If you don't have Kubernetes, it is hard to keep the DAGs directory of Airflow (which is placed at `/opt/airflow/dags/`) synced with the changes you applied to your DAGs and in some cases it is required to restart the Airflow service or container.
 
 The project introduces `git-sync` application alongside Airflow. This handles cloning your configured DAG Git repository and syncing contents over to Airflow's DAG directory.
 
