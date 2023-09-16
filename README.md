@@ -61,6 +61,15 @@ The end result is Airflow DAGs can be managed via Git best practices. Changes ar
 
 ## Project Usage 🧑‍💻
 
+**Important Tip**:
+
+Before you can use the project, based on [Airflow's documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user), you need to ensure that Airflow has the correct permissions for the required directories. To do this, execute the following commands in the directory where your `docker-compose.yaml` file is located:
+
+```bash
+mkdir -p ./dags ./logs ./plugins ./config
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
+
 Using Airflow Git Sync is simple:
 
 1. Add the git-sync container to your docker-compose or Airflow deployment manifest.
