@@ -78,7 +78,6 @@ Using Airflow Git Sync is simple:
     | Variable | Description | Default Value |
     | --- | --- | --- |
     | `REPO_URL` | The URL of the Git repository to sync | `N/A` (required) |
-    | `GIT_URL` | The URL of the Git server | `github.com` |
     | `GIT_BRANCH` | The Git branch to sync | `main` |
     | `DIRECTORY_NAME` | The name of the directory to clone the repository into | `project` |
     | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` |

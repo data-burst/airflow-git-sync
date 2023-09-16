@@ -302,7 +302,6 @@ services:
       - ${GIT_SSH_KEY:-~/.ssh/id_ed25519}:/root/.ssh/id_ed25519
     environment:
       - REPO_URL=${REPO_URL:-git@github.com:mostafaghadimi/airflow_git_sync.git}
-      - GIT_URL=${GIT_URL:-github.com}
       - GIT_BRANCH=${GIT_BRANCH:-main}
       - DIRECTORY_NAME=${DIRECTORY_NAME:-project}
       - DESTINATION_PATH=${DESTINATION_PATH:-/app/sync}
