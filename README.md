@@ -63,14 +63,12 @@ The end result is Airflow DAGs can be managed via Git best practices. Changes ar
 
 **Important Tip**:
 
-Before you can use the project, you need to ensure that Airflow has the correct permissions for the required directories. To do this, execute the following commands in the directory where your `docker-compose.yaml` file is located:
+Before you can use the project, based on [Airflow's documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user), you need to ensure that Airflow has the correct permissions for the required directories. To do this, execute the following commands in the directory where your `docker-compose.yaml` file is located:
 
 ```bash
 mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
-
-These commands will create the directories `dags`, `logs`, `plugins`, and `config` if they don't already exist. The second command writes your user ID to a file named `.env`, which is used to set the `AIRFLOW_UID` environment variable. This ensures that Airflow runs with the same permissions as your user account.
 
 Using Airflow Git Sync is simple:
 
