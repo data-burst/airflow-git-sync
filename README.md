@@ -101,7 +101,7 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 3. **Updating Docker Compose**: To ensure that your SSH key is correctly mounted in the `git-sync` container, modify the relevant line in your `docker-compose.yaml` file as follows:
 
    ```yaml
-   - ${GIT_SSH_KEY:-~/.ssh/id_<key-type>}:/root/.ssh/id_<key-type>
+   - ${GIT_SSH_KEY:-~/.ssh/<ssh_private_key_file_name>}:/root/.ssh/<ssh_private_key_file_name>
 
 ### Using Airflow Git Sync
 
