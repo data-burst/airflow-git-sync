@@ -82,6 +82,8 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 
      ```bash
      ssh-keygen -t <key-type>
+     # example
+     # ssh-keygen -t id_ed25519 
      ```
 
      Replace `<key-type>` with the desired key type (e.g., `ed25519`, `rsa`).
