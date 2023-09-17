@@ -22,6 +22,8 @@
   - [Table of Contents 🏗️](#table-of-contents-️)
   - [Project Description 🌱](#project-description-)
   - [Project Usage 🧑‍💻](#project-usage-)
+    - [Setting Up Your SSH Key](#setting-up-your-ssh-key)
+    - [Using Airflow Git Sync](#using-airflow-git-sync)
   - [Contributing 👥](#contributing-)
   - [License 📄](#license-)
 
@@ -69,6 +71,41 @@ Before you can use the project, based on [Airflow's documentation](https://airfl
 mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
+
+### Setting Up Your SSH Key
+
+1. **Generate an SSH Key**: If you don't already have an SSH key, you can generate one using the following steps:
+
+   - Open a Terminal: Open your terminal or command prompt.
+
+   - Generate SSH Key: Run the following command to generate a new SSH key:
+
+     ```bash
+     ssh-keygen -t <key-type>
+     # example
+     # ssh-keygen -t id_ed25519 
+     ```
+
+     Replace `<key-type>` with the desired key type (e.g., `ed25519`, `rsa`).
+
+   - Follow Prompts: You'll be prompted to choose a location for your SSH key. Press Enter to accept the default location (usually `~/.ssh/id_<key-type>`) or specify a different one.
+
+2. **Adding SSH Key to Your Git Account**: To use your SSH key with Git, you need to add your public key to your Git account. Here's how:
+
+   - Go to your Git account settings on the web (e.g., GitHub, GitLab).
+
+   - Navigate to "SSH and GPG keys" or a similar section.
+
+   - Click "New SSH key" or equivalent.
+
+   - Paste your public key into the provided field and give it a meaningful title.
+
+3. **Updating Docker Compose**: To ensure that your SSH key is correctly mounted in the `git-sync` container, modify the relevant line in your `docker-compose.yaml` file as follows:
+
+   ```yaml
+   - ${GIT_SSH_KEY:-~/.ssh/<ssh_private_key_file_name>}:/root/.ssh/<ssh_private_key_file_name>
+
+### Using Airflow Git Sync
 
 Using Airflow Git Sync is simple:
 
