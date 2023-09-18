@@ -63,23 +63,6 @@ The end result is Airflow DAGs can be managed via Git best practices. Changes ar
 
 ## Project Usage 🧑‍💻
 
-### What?
-
-We have a git repository which contains our dags
-
-### Why?
-
-Maintaining dags are hard
-Kubernetes has such ability but not other executors
-
-### How?
-
-About docker-compose file —> first of all deploying Airflow, after that about git-sync app —> paste some of codes here
-Diagram
-
-### Example Directory:
-
-Simple Readme file
 
 **Important Tip**:
 
@@ -126,9 +109,18 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 ### Using Airflow Git Sync
 
 Using Airflow Git Sync is simple:
+1. Clone the repository using the following command:
 
-1. Add the git-sync container to your docker-compose or Airflow deployment manifest.
-2. Configure it via environment variables in `docker-compose.yaml` file:
+   ```bash
+   git clone git@github.com:data-burst/airflow-git-sync.git
+   ```
+
+    or
+    ```bash
+    git clone https://github.com/data-burst/airflow-git-sync.git
+    ```
+
+2. Configure git-sync via environment variables in `docker-compose.yaml` file:
 
     | Variable | Description | Default Value |
     | --- | --- | --- |
@@ -138,8 +130,8 @@ Using Airflow Git Sync is simple:
     | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` |
     | `INTERVAL` | The interval (in seconds) to sync the repository | `10` |
  
-4. Manage your DAG files in Git as usual. Changes will be automatically synced to Airflow containers.
-5. Trigger automated deployments by pushing DAG changes to your Git repo.
+3. In order to deploy the Airflow with the configured Git-sync, simply run the docker compose up -d command.
+4. Enjoy!
 
 ## Contributing 👥
 
