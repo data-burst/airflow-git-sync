@@ -63,6 +63,24 @@ The end result is Airflow DAGs can be managed via Git best practices. Changes ar
 
 ## Project Usage 🧑‍💻
 
+### What?
+
+We have a git repository which contains our dags
+
+### Why?
+
+Maintaining dags are hard
+Kubernetes has such ability but not other executors
+
+### How?
+
+About docker-compose file —> first of all deploying Airflow, after that about git-sync app —> paste some of codes here
+Diagram
+
+### Example Directory:
+
+Simple Readme file
+
 **Important Tip**:
 
 Before you can use the project, based on [Airflow's documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user), you need to ensure that Airflow has the correct permissions for the required directories. To do this, execute the following commands in the directory where your `docker-compose.yaml` file is located:
