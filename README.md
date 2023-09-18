@@ -119,10 +119,9 @@ Using Airflow Git Sync is simple:
     | `DIRECTORY_NAME` | The name of the directory to clone the repository into | `project` |
     | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` |
     | `INTERVAL` | The interval (in seconds) to sync the repository | `10` |
-
-3. Run the command `docker-compose up -d` 
-5. Manage your DAG files in Git as usual. Changes will be automatically synced to Airflow containers.
-6. Trigger automated deployments by pushing DAG changes to your Git repo.
+ 
+4. Manage your DAG files in Git as usual. Changes will be automatically synced to Airflow containers.
+5. Trigger automated deployments by pushing DAG changes to your Git repo.
 
 ## Contributing 👥
 
