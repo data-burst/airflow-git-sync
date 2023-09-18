@@ -130,7 +130,7 @@ Using Airflow Git Sync is simple:
     | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` |
     | `INTERVAL` | The interval (in seconds) to sync the repository | `10` |
  
-3. In order to deploy the Airflow with the configured Git-sync, simply run the docker compose up -d command.
+3. In order to deploy the Airflow with the configured Git-sync, simply run the ‍`docker compose up -d‍` command.
 4. Enjoy!
 
 ## Contributing 👥
