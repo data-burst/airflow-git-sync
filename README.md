@@ -109,7 +109,7 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 ### Using Airflow Git Sync
 
 Using Airflow Git Sync is simple:
-1. Clone the repository using the following command:
+1. Clone the repository.
 2. Configure git-sync via environment variables in `docker-compose.yaml` file:
 
     | Variable | Description | Default Value |
