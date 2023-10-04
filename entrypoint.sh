@@ -1,5 +1,6 @@
 #!/bin/sh
 PROJECT_DIRECTORY="/app/${DIRECTORY_NAME:-project}"
+SUBFOLDER=${SUBFOLDER_PATH:-""}  # Fetch the sub-folder path from an environment variable
 
 mkdir -p ~/.ssh
 
@@ -11,7 +12,7 @@ if [ ! -d "$PROJECT_DIRECTORY/.git" ]; then
   cd $PROJECT_DIRECTORY
   git remote add origin $REPO_URL
   git pull origin ${GIT_BRANCH:-main}
-  rsync -vazC $PROJECT_DIRECTORY/ ${DESTINATION_PATH:-/app/sync}
+  rsync -vazC $PROJECT_DIRECTORY/$SUBFOLDER ${DESTINATION_PATH:-/app/sync}
 fi
 
 if [[ "$PWD" != "$PROJECT_DIRECTORY" ]]
@@ -24,6 +25,9 @@ while true; do
   git -C $PROJECT_DIRECTORY pull origin ${GIT_BRANCH:-main}
   git clean -fd
   sleep ${INTERVAL:-10}
-  rsync -vazC $PROJECT_DIRECTORY/ ${DESTINATION_PATH:-/app/sync}
+  if [ -z "$SUBFOLDER" ]; then
+    rsync -vazC $PROJECT_DIRECTORY/ ${DESTINATION_PATH:-/app/sync}
+  else
+    rsync -vazC $PROJECT_DIRECTORY/$SUBFOLDER ${DESTINATION_PATH:-/app/sync}
+  fi
 done
-
