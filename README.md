@@ -1,12 +1,11 @@
 # Airflow Git Sync
+
 🎉 What if you could instantly sync DAG changes from **Git** to **Airflow**? Well now you can!
 
 <p align=center>
-    <!-- TODO:// For each repository we MUST use local images  -->
     <img src="images/git_sync.jpg" width="450" height="200" alt="airflow git sync"/>
 </p>
 
-<!-- TODO:// Add more badges to the sample template -->
 <p align=center>
     <a href="https://github.com/data-burst/airflow-git-sync/graphs/contributors">
     <img src="https://img.shields.io/github/contributors-anon/data-burst/airflow-git-sync?color=yellow&style=flat-square" alt="contributors">
@@ -49,20 +48,19 @@ The syncing is achieved via a lightweight Docker container that runs periodicall
     # Git-sync container
     image: databurst/airflow-git-sync:latest  
     environment:
-      - REPO_URL: http://example.com/airflow-dags.git
+      - REPO_URL: <dags_git_repo_url>.git
       #...other config
 ```
+
 The git-sync container will keep DAGs in Airflow containers continually synced from files committed to the Git repository.
 
 The end result is Airflow DAGs can be managed via Git best practices. Changes are automatically reflected in your pipeline deployment. No need for complex Kubernetes just to get basic Git sync!
 
 <p align=center>
-    <!-- TODO:// For each repository we MUST use local images  -->
     <img src="images/architecture.jpg" alt="airflow git sync diagram"/>
 </p>
 
 ## Project Usage 🧑‍💻
-
 
 **Important Tip**:
 
@@ -109,18 +107,18 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 ### Using Airflow Git Sync
 
 Using Airflow Git Sync is simple:
+
 1. Clone the repository.
 2. Configure git-sync via environment variables in `docker-compose.yaml` file:
 
     | Variable | Description | Default Value |
     | --- | --- | --- |
-    | `REPO_URL` | The URL of the Git repository to sync | `N/A` (required) |
+    | `REPO_URL` | The URL of the Git repository to sync | `git@github.com:data-burst/airflow_git_sync.git` (required) |
     | `SUBFOLDER_PATH` | The repository sub-folder to sync. Leaving empty copies the entire repo | `N/A` (optional) | 
     | `GIT_BRANCH` | The Git branch to sync | `main` |
     | `DIRECTORY_NAME` | The name of the directory to clone the repository into | `project` |
     | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` |
     | `INTERVAL` | The interval (in seconds) to sync the repository | `10` |
- 
 3. In order to deploy the Airflow with the configured Git-sync, simply run the ‍`docker compose up -d‍` command.
 4. Enjoy!
 
