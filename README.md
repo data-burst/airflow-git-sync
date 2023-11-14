@@ -46,9 +46,9 @@ The syncing is achieved via a lightweight Docker container that runs periodicall
     
   git-sync:
     # Git-sync container
-    image: databurst/airflow-git-sync:latest  
+    image: docker pull databurst/git-sync:latest  
     environment:
-      - REPO_URL: <dags_git_repo_url>.git
+      REPO_URL: <dags_git_repo_url>.git
       #...other config
 ```
 
