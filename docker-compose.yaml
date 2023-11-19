@@ -74,7 +74,7 @@ x-airflow-common:
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
-    - ./project_data/dags:/opt/airflow/dags
+    - ./project_data:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID:-50000}:0"
@@ -301,11 +301,11 @@ services:
       - ./project_data:${DESTINATION_PATH:-/app/sync}
       - ${GIT_SSH_KEY:-~/.ssh/id_ed25519}:/root/.ssh/id_ed25519
     environment:
-      - REPO_URL=${REPO_URL:-git@github.com:data-burst/airflow_git_sync.git}
-      - GIT_BRANCH=${GIT_BRANCH:-main}
-      - DIRECTORY_NAME=${DIRECTORY_NAME:-project}
-      - DESTINATION_PATH=${DESTINATION_PATH:-/app/sync}
-      - INTERVAL=${INTERVAL:-10}
+      REPO_URL: ${REPO_URL:-git@github.com:data-burst/airflow_git_sync.git}
+      GIT_BRANCH: ${GIT_BRANCH:-main}
+      DIRECTORY_NAME: ${DIRECTORY_NAME:-project}
+      DESTINATION_PATH: ${DESTINATION_PATH:-/app/sync}
+      INTERVAL: ${INTERVAL:-10}
 
 volumes:
   postgres-db-volume:
