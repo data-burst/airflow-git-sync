@@ -23,6 +23,7 @@
   - [Project Usage 🧑‍💻](#project-usage-)
     - [Setting Up Your SSH Key](#setting-up-your-ssh-key)
     - [Using Airflow Git Sync](#using-airflow-git-sync)
+  - [FAQ ❓](#faq-)
   - [Contributing 👥](#contributing-)
   - [License 📄](#license-)
 
@@ -121,6 +122,24 @@ Using Airflow Git Sync is simple:
     | `INTERVAL` | The interval (in seconds) to sync the repository | `10` |
 3. In order to deploy the Airflow with the configured Git-sync, simply run the ‍`docker compose up -d‍` command.
 4. Enjoy!
+
+## FAQ ❓
+
+In this section you can find and resolve your common issues that faced to.
+
+<details>
+<summary>
+Internet Connection Issue
+</summary>
+
+If you've seen the following error using `docker logs -f <container-name>` command, the probable root cause may be is that you are connected to VPN!
+
+> getaddrinfo github.com: Try again
+ssh: Could not resolve hostname github.com: Try again
+fatal: Could not read from remote repository.
+
+For more information, checkout [this](https://stackoverflow.com/questions/20430371/my-docker-container-has-no-internet) link.
+</details>
 
 ## Contributing 👥
 
