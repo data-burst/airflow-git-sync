@@ -115,11 +115,13 @@ Using Airflow Git Sync is simple:
     | Variable | Description | Default Value |
     | --- | --- | --- |
     | `REPO_URL` | The URL of the Git repository to sync | `git@github.com:data-burst/airflow_git_sync.git` (required) |
-    | `SUBFOLDER_PATH` | The repository sub-folder to sync. Leaving empty copies the entire repo | `N/A` (optional) | 
-    | `GIT_BRANCH` | The Git branch to sync | `main` |
-    | `DIRECTORY_NAME` | The name of the directory to clone the repository into | `project` |
-    | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` |
-    | `INTERVAL` | The interval (in seconds) to sync the repository | `10` |
+    | `SUBFOLDER_PATH` | The repository sub-folder to sync. Leaving empty copies the entire repo | `N/A` (optional) |
+    | `GIT_BRANCH` | The Git branch to sync | `main` (optional) |
+    | `DIRECTORY_NAME` | The name of the directory to clone the repository into | `project` (optional) |
+    | `DESTINATION_PATH` | The path to sync the repository to | `/app/sync` (optional) |
+    | `INTERVAL` | The interval (in seconds) to sync the repository | `10` (optional)|
+    | `GIT_PULL_REBASE` | Determines the Git pull strategy. If set to `true`, it configures `git config pull.rebase` to use `rebase` during pulls. If `false`, it defaults to `merge`. | `false` (optional)|
+
 3. In order to deploy the Airflow with the configured Git-sync, simply run the ‍`docker compose up -d‍` command.
 4. Enjoy!
 
