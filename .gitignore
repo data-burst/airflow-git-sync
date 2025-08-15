@@ -1,5 +1,6 @@
 dags/
 plugins/
 logs/
+config/
 project_data/
 
