@@ -1,6 +1,15 @@
 # CHANGELOG
 
 
+## v1.0.0 (2025-08-15)
+
+### Features
+
+- Migrate docker compose and examples to the airflow 3 (#31)
+  ([#31](https://github.com/data-burst/airflow-git-sync/pull/31),
+  [`5155aec`](https://github.com/data-burst/airflow-git-sync/commit/5155aecf2d11ba1d5a2aba574a79b6a8a1bbe550))
+
+
 ## v0.1.0 (2025-08-15)
 
 ### Bug Fixes
